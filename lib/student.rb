@@ -1,4 +1,5 @@
 require_relative "../config/environment.rb"
+require 'pry'
 
 class Student
 
@@ -56,7 +57,7 @@ attr_reader :id
     end
 
     def self.new_from_db(row)
-      student = self.new(id=nil, name, grade)
+      student = self.create(name, grade)
       student.id = row[0]
       student.name = row[1]
       student.grade = row[2]
